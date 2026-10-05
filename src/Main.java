@@ -2,14 +2,16 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Author author1 = new Author("Анри", "Шарьер");
+        Author author2 = new Author("Александр", "Пушкин");
+        Book book1 = new Book("Мотылек", author1, 1968);
+        Book book2 = new Book ("Евгений Онегин", author2, 1825);
+        System.out.println(book1.getTitle() + " - " + book1.getAuthor().getNameAuthor() + " " + book1.getAuthor().getSurnameAuthor() + ", " + book1.getYearOfPublication());
+        System.out.println(book2.getTitle() + " - " + book2.getAuthor().getNameAuthor() + " " + book2.getAuthor().getSurnameAuthor() + ", " + book2.getYearOfPublication());
+        book1.setYearOfPublication(1969);
+        System.out.println("Актуальный год: " + book1.getTitle() + ", " + book1.getYearOfPublication());
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+
+
     }
 }
